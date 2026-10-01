@@ -1,1 +1,10 @@
 .idea/*
+# --- llava relevancy project ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+llava_folder/weights/
+*.pt
+*.pth
+*.safetensors
+llava_folder/_smoke_test_out/
