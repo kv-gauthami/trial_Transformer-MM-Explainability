@@ -38,11 +38,7 @@ def _candidate_token_ids(tokenizer, word):
 
 
 def find_word_position(input_ids, tokenizer, word, search_from=0, occurrence="last"):
-    """Position of the FIRST sub-token of `word` at or after `search_from`.
-
-    The first sub-token is where the model commits to the word, so its
-    prediction row (position - 1) is the one to explain.
-    occurrence: "first" | "last" | int (0-based index among matches).
+    """Find the position of a word in the input_ids.
     """
     matches = set()
     for cand in _candidate_token_ids(tokenizer, word):

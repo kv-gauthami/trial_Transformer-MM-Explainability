@@ -27,8 +27,16 @@ def run_layerwise_maps(model, tokenizer, inputs, words, out_dir, prompt_idx=0,
     image_token_id = image_token_id if image_token_id is not None else model.config.image_token_index
     ids = inputs["input_ids"][0].tolist()
     img_start, n_img, grid = image_token_span(ids, image_token_id)
-    response_from = img_start + n_img       # words are searched after the image block
+    response_from = find_answer_start(ids, tokenizer)
+    if response_from >= len(ids):
+        raise ValueError("Nothing after 'ASSISTANT:'. Put the answer in the prompt.")
 
+    answer_text = tokenizer.decode(ids[response_from:])
+    for word in words:
+        if word.lower() not in answer_text.lower():
+            raise ValueError(f"'{word}' is not in the answer: {answer_text!r}")
+
+    
     hook_mgr = AttentionHookManager(model)
     explainer = LlavaLayerwiseExplainer(model, hook_mgr)
     try:
@@ -71,3 +79,18 @@ def run_layerwise_maps(model, tokenizer, inputs, words, out_dir, prompt_idx=0,
     path = save_maps(records, meta, out_dir, save_name)
     print(f"Saved {len(records)} maps -> {path}")
     return records, meta
+
+
+def find_answer_start(ids, tokenizer, marker="ASSISTANT:"):
+    """Index of the first token after the last 'ASSISTANT:' in ids."""
+    for variant in (marker, " " + marker):
+        m = tokenizer(variant, add_special_tokens=False).input_ids
+        if m and tokenizer.convert_ids_to_tokens(m[0]) == "▁":   # drop a bare-space token
+            m = m[1:]
+        for i in range(len(ids) - len(m), -1, -1):
+            if ids[i:i + len(m)] == m:
+                return i + len(m)
+    raise ValueError(f"'{marker}' not found in the prompt; cannot locate the answer.")
+
+    # search only after ASSISTANT:. The word is then either found in the answer, 
+    # or the run fails with a clear message

@@ -1,0 +1,50 @@
+{
+  "prompt_idx": 0,
+  "words": {
+    "dog": {
+      "target_pos": 599,
+      "query_pos": 598,
+      "target_token": "\u2581dog",
+      "query_token": "\u2581the",
+      "target_prob": 0.8783458471298218,
+      "target_logit": 22.256742477416992
+    },
+    "left": {
+      "target_pos": 601,
+      "query_pos": 600,
+      "target_token": "\u2581left",
+      "query_token": "\u2581is",
+      "target_prob": 0.16360200941562653,
+      "target_logit": 19.59816551208496
+    },
+    "man": {
+      "target_pos": 604,
+      "query_pos": 603,
+      "target_token": "\u2581man",
+      "query_token": "\u2581the",
+      "target_prob": 0.9811441898345947,
+      "target_logit": 25.172508239746094
+    }
+  },
+  "row_convention": "t-1",
+  "image_token_start": 5,
+  "num_image_tokens": 576,
+  "grid": 24,
+  "num_layers": 32,
+  "r_final_layer_key": 32,
+  "map_types": [
+    "A",
+    "R_layer",
+    "R_cum",
+    "R_final"
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "5.17.0",
+    "python": "3.10.21"
+  },
+  "model_id": "llava-hf/llava-1.5-7b-hf",
+  "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
+  "prompt": "USER: <image>\nIs the dog left of the man? ASSISTANT: Yes, the dog is left of the man.",
+  "dtype": "float32"
+}
