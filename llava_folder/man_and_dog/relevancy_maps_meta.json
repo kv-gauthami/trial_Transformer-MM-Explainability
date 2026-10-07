@@ -1,45 +1,21 @@
 {
   "prompt_idx": 0,
   "words": {
+    "man": {
+      "target_pos": 595,
+      "query_pos": 594,
+      "target_token": "\u2581man",
+      "query_token": "\u2581A",
+      "target_prob": 0.8213382959365845,
+      "target_logit": 21.37438201904297
+    },
     "dog": {
-      "target_pos": 596,
-      "query_pos": 595,
-      "target_token": "\u2581dog",
-      "query_token": ":",
-      "target_prob": 6.180728845395222e-11,
-      "target_logit": 5.228989601135254
-    },
-    "is": {
-      "target_pos": 597,
-      "query_pos": 596,
-      "target_token": "\u2581is",
-      "query_token": "\u2581dog",
-      "target_prob": 0.6299660205841064,
-      "target_logit": 14.882322311401367
-    },
-    "left": {
       "target_pos": 598,
       "query_pos": 597,
-      "target_token": "\u2581left",
-      "query_token": "\u2581is",
-      "target_prob": 0.184368297457695,
-      "target_logit": 18.134490966796875
-    },
-    "of": {
-      "target_pos": 599,
-      "query_pos": 598,
-      "target_token": "\u2581of",
-      "query_token": "\u2581left",
-      "target_prob": 0.9198715090751648,
-      "target_logit": 22.146141052246094
-    },
-    "man": {
-      "target_pos": 600,
-      "query_pos": 599,
-      "target_token": "\u2581man",
-      "query_token": "\u2581of",
-      "target_prob": 0.1708126813173294,
-      "target_logit": 22.17493438720703
+      "target_token": "\u2581dog",
+      "query_token": "\u2581a",
+      "target_prob": 0.49040400981903076,
+      "target_logit": 20.618127822875977
     }
   },
   "row_convention": "t-1",
@@ -61,6 +37,6 @@
   },
   "model_id": "llava-hf/llava-1.5-7b-hf",
   "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
-  "prompt": "USER: <image>\nIs the dog left of the man? ASSISTANT: dog is left of man",
+  "prompt": "USER: <image>\nWhat is in the image? ASSISTANT: A man and a dog.",
   "dtype": "float32"
 }
