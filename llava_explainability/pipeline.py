@@ -57,10 +57,13 @@ def run_layerwise_maps(model, tokenizer, inputs, words, out_dir, prompt_idx=0,
 
             if make_plots:
                 wdir = os.path.join(out_dir, "plots", f"p{prompt_idx}_{word}")
-                for mtype, arr in (("A", maps.A), ("R_layer", maps.R_layer), ("R_cum", maps.R_cum)):
-                    for sc in scales:
-                        viz.plot_layer_grid(image_rgb, arr, f"{mtype} '{word}'",
-                                            os.path.join(wdir, f"{mtype}_{sc}.png"), scale=sc)
+                arrays = {"A": maps.A, "R_layer": maps.R_layer, "R_cum": maps.R_cum}
+                PLOTS = [("A", "per_layer"), ("A", "global"),
+                        ("R_layer", "global"),
+                        ("R_cum", "per_layer")]
+                for mtype, sc in PLOTS:
+                    viz.plot_layer_grid(image_rgb, arrays[mtype], f"{mtype} '{word}'",
+                                        os.path.join(wdir, f"{mtype}_{sc}.png"), scale=sc)
                 viz.plot_summary(image_rgb, maps, os.path.join(wdir, "summary.png"))
                 viz.plot_final(image_rgb, maps, os.path.join(wdir, "R_final.png"))
     finally:
