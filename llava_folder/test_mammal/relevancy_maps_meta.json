@@ -1,0 +1,34 @@
+{
+  "prompt_idx": 0,
+  "words": {
+    "mammal": {
+      "target_pos": 598,
+      "query_pos": 597,
+      "target_token": "\u2581m",
+      "query_token": "\u2581A",
+      "target_prob": 5.416843850980513e-05,
+      "target_logit": 11.308509826660156
+    }
+  },
+  "row_convention": "t-1",
+  "image_token_start": 5,
+  "num_image_tokens": 576,
+  "grid": 24,
+  "num_layers": 32,
+  "r_final_layer_key": 32,
+  "map_types": [
+    "A",
+    "R_layer",
+    "R_cum",
+    "R_final"
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "5.17.0",
+    "python": "3.10.21"
+  },
+  "model_id": "llava-hf/llava-1.5-7b-hf",
+  "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
+  "prompt": "USER: <image>\nWhat type of animal is in the image? ASSISTANT: A mammal",
+  "dtype": "float32"
+}
