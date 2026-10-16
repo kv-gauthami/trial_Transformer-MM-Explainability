@@ -38,7 +38,7 @@ def pixel_values_to_image(pixel_values):
 def _upsample(grid_map, size):
     """g x g map -> size x size, bilinear (as in the repo)."""
     t = torch.as_tensor(np.asarray(grid_map, dtype=np.float32)).reshape(1, 1, *grid_map.shape)
-    return torch.nn.functional.interpolate(t, size=size, mode="bilinear").reshape(size, size).numpy()
+    return torch.nn.functional.interpolate(t, size=size, mode="nearest").reshape(size, size).numpy()
 
 
 def _normalise(x, vmin=None, vmax=None):

@@ -1,0 +1,6 @@
+2026-09-15T16:19:49 | INFO | mmf : Logging to: ./save/train.log
+2026-09-15T16:19:49 | INFO | mmf_cli.run : Namespace(config_override=None, is_positive_pert=True, is_text_pert=True, local_rank=None, method='transformer_attribution', num_samples=10, opts=['config=projects/visual_bert/configs/vqa2/defaults.yaml', 'model=visual_bert', 'dataset=vqa2', 'run_type=val', 'checkpoint.resume_zoo=visual_bert.finetuned.vqa2.from_coco_train', 'env.data_dir=/rdata/mithun/data', 'env.cache_dir=/rdata/mithun/g_cache/mmf', 'training.num_workers=0', 'training.batch_size=1', 'training.trainer=mmf_pert', 'training.seed=1234'])
+2026-09-15T16:19:49 | INFO | mmf_cli.run : Torch version: 1.13.1+cu117
+2026-09-15T16:19:49 | INFO | VisualBERT.mmf.utils.general : CUDA Device 0 is: NVIDIA H100 NVL
+2026-09-15T16:19:49 | INFO | mmf_cli.run : Using seed 1234
+2026-09-15T16:19:49 | INFO | VisualBERT.mmf.trainers.mmf_trainer : Loading datasets

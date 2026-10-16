@@ -1,0 +1,42 @@
+{
+  "prompt_idx": 0,
+  "words": {
+    "man": {
+      "target_pos": 595,
+      "query_pos": 594,
+      "target_token": "\u2581man",
+      "query_token": "\u2581A",
+      "target_prob": 0.8213382959365845,
+      "target_logit": 21.37438201904297
+    },
+    "dog": {
+      "target_pos": 598,
+      "query_pos": 597,
+      "target_token": "\u2581dog",
+      "query_token": "\u2581a",
+      "target_prob": 0.49040400981903076,
+      "target_logit": 20.618127822875977
+    }
+  },
+  "row_convention": "t-1",
+  "image_token_start": 5,
+  "num_image_tokens": 576,
+  "grid": 24,
+  "num_layers": 32,
+  "r_final_layer_key": 32,
+  "map_types": [
+    "A",
+    "R_layer",
+    "R_cum",
+    "R_final"
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "5.17.0",
+    "python": "3.10.21"
+  },
+  "model_id": "llava-hf/llava-1.5-7b-hf",
+  "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
+  "prompt": "USER: <image>\nWhat is in the image? ASSISTANT: A man and a dog.",
+  "dtype": "float32"
+}

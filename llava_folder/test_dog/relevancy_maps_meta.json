@@ -2,12 +2,12 @@
   "prompt_idx": 0,
   "words": {
     "dog": {
-      "target_pos": 597,
-      "query_pos": 596,
+      "target_pos": 595,
+      "query_pos": 594,
       "target_token": "\u2581dog",
       "query_token": "\u2581A",
-      "target_prob": 0.5571514964103699,
-      "target_logit": 20.589736938476562
+      "target_prob": 0.014759261161088943,
+      "target_logit": 17.355304718017578
     }
   },
   "row_convention": "t-1",
@@ -29,6 +29,6 @@
   },
   "model_id": "llava-hf/llava-1.5-7b-hf",
   "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
-  "prompt": "USER: <image>\nWhat is the animal in the image? ASSISTANT: A dog",
+  "prompt": "USER: <image>\nWhat is in the image? ASSISTANT: A dog",
   "dtype": "float32"
 }

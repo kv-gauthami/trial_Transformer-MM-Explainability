@@ -6,8 +6,8 @@
       "query_pos": 594,
       "target_token": "\u2581man",
       "query_token": "\u2581A",
-      "target_prob": 0.7720475196838379,
-      "target_logit": 21.785892486572266
+      "target_prob": 0.8213411569595337,
+      "target_logit": 21.374372482299805
     }
   },
   "row_convention": "t-1",
@@ -29,6 +29,6 @@
   },
   "model_id": "llava-hf/llava-1.5-7b-hf",
   "image": "/rdata/mithun/gauthamikv/Relevancy_Maps/trial_Transformer-MM-Explainability/llava_folder/man_dog_1.png",
-  "prompt": "USER: <image>\nWho is in the image? ASSISTANT: A man",
+  "prompt": "USER: <image>\nWhat is in the image? ASSISTANT: A man",
   "dtype": "float32"
 }
